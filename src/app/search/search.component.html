@@ -1,5 +1,14 @@
-<p>search works!</p>
+<p>Search works!</p>
 
 <div class="card flex justify-content-center">
-  <input type="text" pInputText [(ngModel)]="title" />
+  <input type="text" pInputText [(ngModel)]="title" placeholder="Enter movie title" />
+  <p-button label="Submit" (onClick)="searchMovies()"/>
 </div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<ul *ngIf="movies.length > 0">
+  <li *ngFor="let movie of movies">
+    {{ movie.Title }} ({{ movie.Year }})
+  </li>
+</ul>
