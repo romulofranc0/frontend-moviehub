@@ -16,6 +16,7 @@
   <div *ngIf="movies.length > 0" class="cards-grid">
     <div *ngFor="let movie of movies">
       <p-card
+
         header="{{ movie.Title }} ({{ movie.Year }})"
         [style]="{ width: '360px' }"
       >

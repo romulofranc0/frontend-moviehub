@@ -11,29 +11,38 @@ import { OmdbResponse } from '../models/OmdbResponse';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [FormsModule, InputTextModule, ButtonModule, CommonModule, CardModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    ButtonModule,
+    CommonModule,
+    CardModule,
+  ],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
-  title:string ='';
+  title: string = '';
   movies: Movie[] = [];
   errorMessage: string = '';
-  loading:boolean = false;
+  loading: boolean = false;
 
-
-
-  constructor(private movieApi:MovieApi){}
+  constructor(private movieApi: MovieApi) {}
 
   searchMovies() {
     this.loading = true;
 
-      this.movieApi.getMovies(this.title).subscribe({
-        next:(response: OmdbResponse) =>{
-          this.movies = response.Search;
-          this.loading = false;
-        }
-      });
-      }
-}
+    this.movieApi.getMovies(this.title).subscribe({
+      next: (response: OmdbResponse) => {
+        this.movies = response.Search;
+        this.loading = false;
+      },
+    });
+  }
 
+  movieDetails(){
+    this.loading = true;
+
+    
+  }
+}
