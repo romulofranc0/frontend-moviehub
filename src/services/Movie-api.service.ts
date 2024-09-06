@@ -12,8 +12,8 @@ export class MovieApi {
 
   constructor(private http: HttpClient) {}
 
-  getMovies(title: string): Observable<OmdbResponse[]> {
-    return this.http.get<OmdbResponse[]>(
+  getMovies(title: string): Observable<OmdbResponse> {
+    return this.http.get<OmdbResponse>(
       `${this.apiUrl}movies?title=${title}`
     );
   }

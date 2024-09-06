@@ -1,14 +1,29 @@
-<p>Search works!</p>
+<div class="flex-container">
+  <div class="flex-1 h-4rem bg-primary font-bold text-center p-4 border-round centered-form">
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="title"
+      placeholder="Enter movie title"
+    />
+    <p-button label="Submit" (click)="searchMovies()"></p-button>
+  </div>
 
-<div class="card flex justify-content-center">
-  <input type="text" pInputText [(ngModel)]="title" placeholder="Enter movie title" />
-  <p-button label="Submit" (onClick)="searchMovies()"/>
+  <div *ngIf="loading" class="loading-message" style="text-align: center">
+    Loading...
+  </div>
+
+  <div *ngIf="movies.length > 0" class="cards-grid">
+    <div *ngFor="let movie of movies">
+      <p-card
+        header="{{ movie.Title }} ({{ movie.Year }})"
+        [style]="{ width: '360px' }"
+      >
+        <img alt="poster" src="{{ movie.Poster }}" />
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1"></div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
 </div>
-
-<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-
-<ul *ngIf="movies.length > 0">
-  <li *ngFor="let movie of movies">
-    {{ movie.Title }} ({{ movie.Year }})
-  </li>
-</ul>
