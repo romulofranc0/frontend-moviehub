@@ -1,1 +1,21 @@
 <p>details works!</p>
+
+
+<div class="card flex justify-content-center">
+    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+            quas!
+        </p>
+        <ng-template pTemplate="footer">
+            <div class="flex gap-3 mt-1">
+                <img class="imdb"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1280px-IMDB_Logo_2016.svg.png"
+                alt="imdb">
+            </div>
+        </ng-template>
+    </p-card>
+</div>
