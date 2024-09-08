@@ -8,6 +8,8 @@ import { MovieApi } from '../../services/Movie-api.service';
 import { Movie } from '../models/Movie';
 import { OmdbResponse } from '../models/OmdbResponse';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DetailsComponent } from '../details/details.component';
+import {Route, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +20,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     ButtonModule,
     CommonModule,
     CardModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DetailsComponent,
+    RouterModule
   ],
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
@@ -28,8 +32,9 @@ export class SearchComponent {
   movies: Movie[] = [];
   errorMessage: string = '';
   loading: boolean = false;
+  imdbID:string = '';
 
-  constructor(private movieApi: MovieApi) {}
+  constructor(private movieApi: MovieApi, private router:Router) {}
 
   searchMovies() {
     this.loading = true;
@@ -42,9 +47,7 @@ export class SearchComponent {
     });
   }
 
-  movieDetails(){
-    this.loading = true;
-
-    
+  navigateToDetails(imdbID: string) {
+    this.router.navigate(['/details', imdbID]);
   }
 }
