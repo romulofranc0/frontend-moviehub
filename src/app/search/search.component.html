@@ -1,29 +1,24 @@
 <div class="flex-container">
   <div class="flex-1 h-4rem bg-primary font-bold text-center p-4 border-round centered-form">
-    <input
-      type="text"
-      pInputText
-      [(ngModel)]="title"
-      placeholder="Enter movie title"
-    />
-    <p-button label="Submit" (click)="searchMovies()"></p-button>
+    <div class="search-bar">
+    <input  type="text" pInputText [(ngModel)]="title" placeholder="Enter movie title" />
+    <p-button icon="pi pi-search" (click)="searchMovies()" styleClass="p-button-text"></p-button>
+  </div>
   </div>
 
   <div *ngIf="loading" class="loading-message" style="text-align: center">
-    Loading...
+    <p-progressSpinner ariaLabel="loading" />
   </div>
 
   <div *ngIf="movies.length > 0" class="cards-grid">
-    <div *ngFor="let movie of movies">
-      <p-card
+    <div *ngFor="let movie of movies" class="card">
+      <p-card [style]="{ width: '360px' }">
+        <img alt="poster" class="poster" src="{{ movie.Poster }}" />
+        <div class="container">
+          <p>{{ movie.Title }} ({{movie.Year}})</p>
+        
+        </div>
 
-        header="{{ movie.Title }} ({{ movie.Year }})"
-        [style]="{ width: '360px' }"
-      >
-        <img alt="poster" src="{{ movie.Poster }}" />
-        <ng-template pTemplate="footer">
-          <div class="flex gap-3 mt-1"></div>
-        </ng-template>
       </p-card>
     </div>
   </div>
