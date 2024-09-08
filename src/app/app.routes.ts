@@ -10,7 +10,7 @@ export const routes: Routes = [
     component: SearchComponent
   },
   {
-    path:'details',
+    path:'details/:imdbID',
     component: DetailsComponent
   }
 ];
