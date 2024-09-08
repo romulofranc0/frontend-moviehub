@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MovieApi } from '../../services/Movie-api.service';
 import { Movie } from '../models/Movie';
 import { OmdbResponse } from '../models/OmdbResponse';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-search',
@@ -17,6 +18,7 @@ import { OmdbResponse } from '../models/OmdbResponse';
     ButtonModule,
     CommonModule,
     CardModule,
+    ProgressSpinnerModule
   ],
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
