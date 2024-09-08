@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OmdbResponse } from '../app/models/OmdbResponse';
 import { Movie } from '../app/models/Movie';
+import { MovieDetails } from '../app/models/MovieDetails';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +19,8 @@ export class MovieApi {
     );
   }
 
-  getMovie(id:string): Observable<Movie>{
-    return this.http.get<Movie>(
+  getMovieDetails(id:string): Observable<MovieDetails>{
+    return this.http.get<MovieDetails>(
       `${this.apiUrl}details?imdbID=${id}`
     );
   }
