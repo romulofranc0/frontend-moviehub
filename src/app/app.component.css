@@ -1,0 +1,12 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -40px;
+    margin-top: -20px;
+  }
+  
+  img.logo {
+    height: 20vh;
+    max-width: 100%; /* Ensures the image doesn't overflow horizontally */
+    object-fit: contain; /* Maintains aspect ratio */
+  }
