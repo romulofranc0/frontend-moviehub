@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 
@@ -12,4 +12,10 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'moviehub';
+
+  constructor(private router:Router){}
+
+  navigateToSearch(){
+    this.router.navigate(['']);
+  }
 }
