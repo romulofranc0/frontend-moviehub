@@ -1,3 +1,4 @@
+
 .flex-container{
   display: flex;
   flex-direction: column;
@@ -18,10 +19,17 @@
   max-width: 1200px;
 }
 
-p-card img {
+p-card img.poster{
   width: 100%;
   height: auto;
+  border-radius: 40px;
+  box-shadow: 0px 4px 25px #00000080;
 }
+
+p-card img.imdb{
+  height: 30px;
+}
+
 
 .cards-grid > div {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -29,8 +37,28 @@ p-card img {
 
 .cards-grid > div:hover {
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .cards-grid .p-card {
   height: 100%;
+}
+
+.cards-grid {
+  padding: 1.25rem;
+
+}
+
+::ng-deep .p-card{
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 40px;
+  box-shadow: 0px 4px 37px #00000080;
+  font-weight: 500;
+}
+
+.container{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 22px;
+  margin:auto;
 }
