@@ -11,8 +11,8 @@
   </div>
 
   <div *ngIf="movies.length > 0" class="cards-grid">
-    <div *ngFor="let movie of movies" class="card">
-      <p-card [style]="{ width: '360px' }">
+    <div *ngFor="let movie of movies" class="card" >
+      <p-card [style]="{ width: '360px' }" (click)="navigateToDetails(movie.imdbID)">
         <img alt="poster" class="poster" src="{{ movie.Poster }}" />
         <div class="container">
           <p>{{ movie.Title }} ({{movie.Year}})</p>
