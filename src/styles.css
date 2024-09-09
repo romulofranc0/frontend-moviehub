@@ -19,13 +19,13 @@ body{
     align-items: center; /* Center items vertically */
     padding: 5px; /* Add some padding */
   }
-  
+
 .p-inputtext {
     background-color: transparent;
-    border-radius: 40px; /* Match the border-radius of the container */
-    border: none; /* Remove border */
-    flex: 1; /* Allow input to take available space */
-    padding: 10px; /* Add padding for better appearance */
+    border-radius: 40px;
+    border: none;
+    flex: 1;
+    padding: 10px;
     outline: none;
   }
 
@@ -39,11 +39,11 @@ body{
     color: aqua;
     background-color: transparent;
     border: none;
-    padding: 0; /* Remove padding to fit inside the input */
-    margin-left: 10px; /* Add some space between input and button */
+    padding: 0;
+    margin-left: 10px;
   }
-  
-  .p-button:focus-visible{
+
+  .p-button:focus{
     outline: none;
     box-shadow: none;
   }

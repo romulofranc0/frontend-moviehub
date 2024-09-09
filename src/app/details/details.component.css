@@ -2,19 +2,20 @@
     position: relative;
     display: flex;
     max-width: 90%; /* Increased from 80vh to 90% of the viewport width */
-  width: 1000px;
-    margin: 40px auto;
+    width: 1000px;
+    margin:40px auto;
     background-color: #ffffff27;
     border-radius: 40px;
     overflow: visible;
+    align-items: center;
   }
-  
+
   .poster-container {
     position: relative;
     width: 35%;
     z-index: 2;
   }
-  
+
   .poster {
     width: 100%;
     height: auto;
@@ -23,24 +24,24 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
     transform: translateY(0px) translateX(-20px) scale(1.1);
   }
-  
+
   .details-container {
     flex: 1;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: white;
     z-index: 1;
   }
-  
+
   .movie-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 30px;
   }
-  
+
   .imdb-rating {
     font-size: 18px;
     margin-bottom: 15px;
   }
-  
+
   .imdb-logo {
     background-color: #f3ce13;
     color: black;
@@ -49,15 +50,26 @@
     font-weight: bold;
     margin-right: 5px;
   }
-  
+
   .year, .genre {
     font-size: 14px;
     color: #bdc3c7;
     margin-bottom: 10px;
   }
-  
+
   .plot {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 15px;
   }
+
+
+::ng-deep.p-button:hover{
+    color: rgb(211, 255, 255) !important;
+
+  }
+
+
+::ng-deep.p-button{
+  margin: auto;
+}

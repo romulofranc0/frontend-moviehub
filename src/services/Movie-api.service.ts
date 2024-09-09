@@ -19,6 +19,8 @@ export class MovieApi {
     );
   }
 
+ 
+
   getMovieDetails(id:string): Observable<MovieDetails>{
     return this.http.get<MovieDetails>(
       `${this.apiUrl}details?imdbID=${id}`

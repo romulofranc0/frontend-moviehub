@@ -1,5 +1,8 @@
+<div *ngIf="loading" class="loading-message" style="text-align: center">
+  <p-progressSpinner ariaLabel="loading" />
+</div>
 
-<div class="movie-card">
+  <div *ngIf="!loading" class="movie-card">
     <div class="poster-container">
       <img alt="poster" class="poster" [src]="details.Poster" />
     </div>
@@ -11,5 +14,6 @@
       <p class="year">Year: {{ details.Year }}</p>
       <p class="plot">{{ details.Plot }}</p>
       <p class="genre">Genre: {{ details.Genre }}</p>
+      <p-button icon="pi pi-plus" label="Add to List"></p-button>
     </div>
   </div>

@@ -6,11 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MovieApi } from '../../services/Movie-api.service';
 import { MovieDetails } from '../models/MovieDetails';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ChipModule } from 'primeng/chip';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CardModule, ButtonModule, ProgressSpinnerModule],
+  imports: [CardModule, ButtonModule, ProgressSpinnerModule,ChipModule, CommonModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
@@ -20,10 +22,11 @@ export class DetailsComponent implements OnInit{
   loading: boolean = false;
 
   constructor(private route: ActivatedRoute, private movieApi:MovieApi){}
-  
+
   ngOnInit() {
     this.imdbID = this.route.snapshot.paramMap.get('imdbID') || '';
-    
+    this.loading = true;
+
     this.movieApi.getMovieDetails(this.imdbID).subscribe({
       next: (data: MovieDetails) => {
         this.details = data;
